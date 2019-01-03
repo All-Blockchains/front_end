@@ -52,7 +52,7 @@ const theme = createMuiTheme({
     typography: {useNextVariants: true},
 });
 
-const callvalue = 2000000;
+const callvalue = 10000000;
 
 class App extends React.Component {
 
@@ -525,7 +525,9 @@ class App extends React.Component {
                             TDNS is a DApp which allows you assign an easy and readable name for your wallet address.
 
                             after assigning a name to wallet address you can work with that on wallet and explorer that
-                            support it
+                            support it.<br/>
+                            <a href="https://tronwallet.network" target="_blank">tronwallet</a> supports TDNS. after
+                            registration your name, then you can test it <br/>
 
 
                         </p>
@@ -565,7 +567,9 @@ class App extends React.Component {
                         </div>
 
 
-                        <small className="m-1 p-1"><a href="https://github.com/TDNS">github page</a></small>
+                        <small className="m-1 p-1"><a href="https://github.com/TDNS" target="_blank">github page</a>
+                        </small>
+
                     </div>
 
                 </div>
