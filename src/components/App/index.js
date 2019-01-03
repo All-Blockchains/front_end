@@ -52,6 +52,7 @@ const theme = createMuiTheme({
     typography: {useNextVariants: true},
 });
 
+const callvalue = 2000000;
 
 class App extends React.Component {
 
@@ -76,7 +77,8 @@ class App extends React.Component {
             placeHolder: '',
             afterClick: false,
 
-            loading: false
+            loading: false,
+            fee: 0
 
 
         };
@@ -245,13 +247,6 @@ class App extends React.Component {
         this.validation();
     };
 
-    handleClick = async () => {
-
-        const x = await Utils.tronWeb.trx.getBalance();
-        console.log("xxxxxx : ", x);
-
-
-    };
 
     async getAddress(name) {
 
@@ -284,71 +279,109 @@ class App extends React.Component {
 
     addTNS = async () => {
 
+        const balance = await Utils.tronWeb.trx.getBalance();
+
         const {addressName} = this.state;
 
-        // shouldPollResponse: true,
 
-        // Utils.contract.add(addressName.trim()).send({
-        //     shouldPollResponse: true,
-        //     callValue: 0
-        // }).then(res => Swal({
-        //
-        //     title: 'Added Name ',
-        //     type: 'success'
-        //
-        // })).catch(err => Swal({
-        //     title: 'Adding Name Failed',
-        //     type: 'error'
-        // })).then(() => {
-        //
-        //     this.setState({
-        //
-        //             loading: false,
-        //     });
-        // });
+        const sure = await Swal({
+
+            type: 'question',
+            title: 'Are you sure for Name : ' + addressName + ' ? ',
+            text: 'Cost of registration is 10 TRX plus 0.27 ~ 0.3 TRX for network fee ',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+            showCancelButton: true,
+
+
+        });
+
+        if (!sure.value) {
+
+            return;
+        }
+
+// if( await !Swal({
+//
+//     type:'question',
+//     title:'Are you sure for Name : ' + addressName +  ' ? ',
+//     text :'Cost of registration is 10 TRX plus 0.27 ~ 0.3 TRX for network fee ' ,
+//     confirmButtonText: 'Yes',
+//     cancelButtonText:'No',
+//     showCancelButton: true,
+//
+//
+// }).value )
+// {
+//
+//     return  ;
+// }
+
+
+        console.log("balance : ", await balance);
+
+        if ((await balance / 1000000) < 11) {
+            Swal({
+
+                title: 'Insufficient Balance ',
+                text: 'you should have at least 11 TRX  ',
+                type: 'error'
+            });
+
+
+            return;
+        }
+
 
 
         Utils.contract.add(addressName.trim()).send({
-            callValue: 0,
+            callValue: callvalue,
         }).then(async res => {
-
-            console.log("res without await ", res);
-            console.log("res with await ", await res);
 
             setTimeout(async () => {
                 const {data} = await Utils.getData(await res);
-                const fee = data.fee / 1000000;
+                // this.setState({fee:data.fee / 1000000}) ;
+
+
                 console.log("after add Wallet", data);
+
+                const totalFee = (data.fee + callvalue) / 1000000;
+                this.setState({fee: totalFee});
+
                 setTimeout(async () => {
 
                     if (data.result === "FAILED") {
                         Swal({
                             title: 'Wrong Name ',
                             type: 'error',
-                            text: 'Fee : ' + fee + ' TRX'
+                            text: 'Fee : ' + totalFee + ' TRX'
 
                         })
                     } else {
+
                         Swal({
                             title: 'Added Name',
                             titleText: addressName,
                             type: 'success',
-                            text: 'Fee : ' + fee + ' TRX',
+                            text: 'Fee : ' + totalFee + ' TRX',
                             preConfirm: async () => {
+
 
                                 this.setState({afterClick: true});
 
-                                setTimeout(async () => {
+                                const f = this.state.fee;
 
-                                    const x = await Utils.tronWeb.trx.getBalance();
 
-                                    console.log("balance x : ", x);
-                                    this.setState({balance: x});
+                                const b = this.state.balance - (data.fee + callvalue);
 
-                                }, 10000);
+                                console.log("balance : ", b / 1000000);
+                                this.setState({balance: b});
+
+
 
                             }
                         })
+
                     }
 
 
@@ -358,7 +391,7 @@ class App extends React.Component {
                     // this.setState({balance: await Utils.tronWeb.trx.getBalance()});
                     // console.log("balance : " , this.state.balance);
 
-                }, 200);
+                }, 100);
 
 
             }, 2000)

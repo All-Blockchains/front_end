@@ -11441,10 +11441,10 @@ trim@0.0.1:
   resolved "https://registry.yarnpkg.com/trim/-/trim-0.0.1.tgz#5858547f6b290757ee95cccc666fb50084c460dd"
   integrity sha1-WFhUf2spB1fulczMZm+1AITEYN0=
 
-tronweb@^2.1.17:
-  version "2.1.17"
-  resolved "https://registry.yarnpkg.com/tronweb/-/tronweb-2.1.17.tgz#b4822e06674574cec82ce0c28aeb45a463c265b9"
-  integrity sha512-VdIDWoU9L1IpiXeWWMfPbERD3YW5JXyH5cS/Cx2lcMWrPV5Bq+Vk03SzwZUnY1tfrip1UhEGfy0TCdVmy9Tcug==
+tronweb@^2.1.20:
+  version "2.1.20"
+  resolved "https://registry.yarnpkg.com/tronweb/-/tronweb-2.1.20.tgz#a83383c23e26cd3514e09eb2ce46b58deafa096f"
+  integrity sha512-wL6rFo1fxLRPJAM5uI/JZP8J7gzQC9zB/fLDtPu89NGxK49hkg7LubykQeibEuCk9dFkSGBHr7VvnmpivZ1O3w==
   dependencies:
     "@babel/runtime" "^7.0.0"
     axios "^0.18.0"
