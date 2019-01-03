@@ -1,7 +1,7 @@
 ##   Tron Decentralized Name System (TDNS) 
                         
 
-[View](https://tns.tronwallet.network)
+[TDNS dApp ](https://tdns.github.io)
 
 TDNS is a DApp built for TRON. It allows you to remember your Wallet address very easy on tron wallets 
 and Tron explorer that support TDNS.
