@@ -38,7 +38,6 @@ const utils = {
 
         const x = await newContract.getAddress(name).call();
         const address = this.tronWeb.address.fromHex(x);
-        console.log("address in fetchAddress : ", address);
         return address;
     },
 

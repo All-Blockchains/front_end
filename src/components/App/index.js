@@ -299,24 +299,6 @@ class App extends React.Component {
             return;
         }
 
-// if( await !Swal({
-//
-//     type:'question',
-//     title:'Are you sure for Name : ' + addressName +  ' ? ',
-//     text :'Cost of registration is 10 TRX plus 0.27 ~ 0.3 TRX for network fee ' ,
-//     confirmButtonText: 'Yes',
-//     cancelButtonText:'No',
-//     showCancelButton: true,
-//
-//
-// }).value )
-// {
-//
-//     return  ;
-// }
-
-
-        console.log("balance : ", await balance);
 
         if ((await balance / 1000000) < 11) {
             Swal({
@@ -337,10 +319,6 @@ class App extends React.Component {
 
             setTimeout(async () => {
                 const {data} = await Utils.getData(await res);
-                // this.setState({fee:data.fee / 1000000}) ;
-
-
-                console.log("after add Wallet", data);
 
                 const totalFee = (data.fee + callvalue) / 1000000;
                 this.setState({fee: totalFee});
@@ -368,7 +346,6 @@ class App extends React.Component {
 
                                 const b = this.state.balance - (data.fee + callvalue);
 
-                                console.log("balance : ", b / 1000000);
                                 this.setState({balance: b});
 
 
@@ -377,12 +354,8 @@ class App extends React.Component {
 
                     }
 
-
                     this.setState({addressName: '', isValid: false, afterClick: false});
 
-
-                    // this.setState({balance: await Utils.tronWeb.trx.getBalance()});
-                    // console.log("balance : " , this.state.balance);
 
                 }, 100);
 
