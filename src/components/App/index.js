@@ -489,13 +489,15 @@ class App extends React.Component {
                             <b> Tron Decentralized Name System (TDNS) </b>
 
                             <br/>
-                            TDNS is a DApp which allows you assign an easy and readable name for your wallet address.
+                            TDNS is a DApp which allows you assign an easy and readable name for your wallet
+                            address.<br/>
 
-                            after assigning a name to wallet address you can work with that on wallet and explorer that
-                            support it.<br/>
-                            <a href="https://tronwallet.network" target="_blank"
-                               rel="noopener noreferrer">tronwallet</a> supports TDNS. after
-                            registration your name, then you can test it <br/>
+                            <b className="text-info"> For example : justinsun.tron =
+                                TXmVpin5vq5gdZsciyyjdZgKRUju4st1wM </b>
+                            <br/>
+
+                            <b className="text-info">Note : </b> <b className="text-success">11 TRX is needed to be in
+                            your wallet to register a name</b>
 
 
                         </p>
@@ -518,6 +520,8 @@ class App extends React.Component {
                                 example
                                 JustinSun.tron , JustinSun, 贾斯汀太阳 <br/>
                                 and then click on TDNS button. <br/>
+                                <a href="https://tronwallet.network" target="_blank"
+                                   rel="noopener noreferrer">tronwallet</a> supports TDNS. <br/>
 
                             </div>
 
