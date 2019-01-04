@@ -16,6 +16,7 @@ import './App.scss';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 
+
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TextFormatIcon from '@material-ui/icons/TextFormat'
 import {DONT_ADDRESS, MAIN_FOUNDATION_ADDRESS, MAIN_TRON_API} from "../../utils/constants";
@@ -486,10 +487,11 @@ class App extends React.Component {
                         <a href='https://tronwatch.market' target='_blank' rel='noopener noreferrer'>
                         </a>
                         <p>
-                            <b> Tron Decentralized Name System (TDNS) </b>
+                            <b> <span className="text-danger">Tron</span> Decentralized Name System ( TDNS) </b>
 
                             <br/>
-                            TDNS is a DApp which allows you assign an easy and readable name for your wallet
+                            TDNS is a DApp which allows you assign a unique, easy, memorable,readable name to your
+                            wallet
                             address.<br/>
 
                             <b className="text-info"> For example : justinsun.tron =
@@ -503,11 +505,10 @@ class App extends React.Component {
                         </p>
                     </div>
 
-
                     {this.renderWalletInfo()}
 
 
-                    <div className='header white'>
+                    <div className='header white p-2'>
 
                         <div className="row m-2">
 
@@ -516,10 +517,11 @@ class App extends React.Component {
 
                                 <br/>
 
+                                Install TronLink and then import or create a wallet with at least 11 TRX <br/>
                                 Enter a name in any language in <a href="#addressName"> Name </a> field.<br/> For
                                 example
                                 JustinSun.tron , JustinSun, 贾斯汀太阳 <br/>
-                                and then click on TDNS button. <br/>
+                                and then click on REGISTER. <br/>
                                 <a href="https://tronwallet.network" target="_blank"
                                    rel="noopener noreferrer">TronWallet</a> supports TDNS. <br/>
 
@@ -535,13 +537,35 @@ class App extends React.Component {
                                 You can create multi name for your wallet address but note you can not delete name.
 
                             </div>
-                            <hr/>
+
                         </div>
 
+                        <hr className="hr"/>
 
-                        <small className="ml-4 mb-2 p-1"><a href="https://github.com/TDNS" target="_blank"
-                                                            rel="noopener noreferrer"> <b> github page</b></a>
-                        </small>
+                        <div className="row">
+
+
+                            <small className="ml-4 mb-2 p-1">
+
+                                <b className="text-danger"> Contact : </b>
+
+                                <a href="https://github.com/TDNS" target="_blank"
+                                   rel="noopener noreferrer"> <b className="text-secondary"> Github </b>
+                                </a>
+                                <a href="https://discordapp.com/channels/491685925227724801/505440567488937994"
+                                   target="_blank"
+                                   rel="noopener noreferrer"> <b className="text-info"> Discord </b>
+                                </a>
+                                <a href="https://telegram.me/gpsavad" target="_blank"
+                                   rel="noopener noreferrer"> <b className="text-primary"> Telegram </b>
+                                </a>
+
+
+                            </small>
+
+
+                        </div>
+
 
                     </div>
 
