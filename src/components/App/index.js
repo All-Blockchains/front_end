@@ -466,7 +466,9 @@ class App extends React.Component {
                         <Save className={classNames(classes.leftIcon, classes.iconSmall)}/>
                         Register
                     </Button>
-                    <h6 className="text-primary ml-2"><b>Name is case sensitive.</b></h6>
+                    <h6 className="text-primary ml-2  text-danger">
+                        <small>Name is case sensitive. it means JustinSun is differ with justinsun</small>
+                    </h6>
 
 
                 </small>
@@ -486,20 +488,26 @@ class App extends React.Component {
                     <div className='header white'>
                         <a href='https://tronwatch.market' target='_blank' rel='noopener noreferrer'>
                         </a>
-                        <p>
-                            <b> <span className="text-danger">Tron</span> Decentralized Name System ( TDNS) </b>
+                        <p className="text-muted">
+                            <b> <span className="text-danger">Tron</span> Decentralized Name System ( <span
+                                className="text-danger">T</span>
+                                <small className="small">DNS</small>
+                                ) </b>
 
                             <br/>
-                            TDNS is a DApp which allows you assign a unique, easy, memorable,readable name to your
+                            <span className="text-danger">T</span>
+                            <small className="small">DNS</small>
+                            is a DApp which allows you assign a unique, easy, memorable,readable name to your
                             wallet
                             address.<br/>
 
-                            <b className="text-info"> For example : justinsun.tron =
-                                TXmVpin5vq5gdZsciyyjdZgKRUju4st1wM </b>
+                            <small className="text-info "> For example : justinsun.tron =
+                                TXmVpin5vq5gdZsciyyjdZgKRUju4st1wM
+                            </small>
                             <br/>
 
-                            <b className="text-info">Note : </b> <b className="text-success">11 TRX is needed to be in
-                            your wallet to register a name</b>
+                            {/*<small className="text-warning">Note : </small> <small className="text-success">11 TRX is needed to be in*/}
+                            {/*your wallet to register a name</small>*/}
 
 
                         </p>
@@ -512,27 +520,27 @@ class App extends React.Component {
 
                         <div className="row m-2">
 
-                            <div className="col-md-6">
-                                <b> how to use TDNS ? </b>
+                            <div className="col-md-6 text-muted text-justified small">
+                                <b> How to use <span className="text-danger">T</span>DNS ? </b>
 
                                 <br/>
 
                                 Install TronLink and then import or create a wallet with at least 11 TRX <br/>
-                                Enter a name in any language in <a href="#addressName"> Name </a> field.<br/> For
-                                example
+                                Enter a name in any language in <a href="#addressName"> Name </a> field.<br/>
+                                For example :
                                 JustinSun.tron , JustinSun, 贾斯汀太阳 <br/>
-                                and then click on REGISTER. <br/>
                                 <a href="https://tronwallet.network" target="_blank"
-                                   rel="noopener noreferrer">TronWallet</a> supports TDNS. <br/>
+                                   rel="noopener noreferrer">TronWallet</a> supports <span
+                                className="text-danger">T</span>DNS. <br/>
 
                             </div>
 
-                            <div className="col-md-6">
+                            <div className="col-md-6 text-muted text-justified small">
                                 <b className="m-1"> Fee ? </b><br/>
 
                                 Network fee = .27 ~ .3 TRX <br/>
 
-                                Cost of using TDNS = 10 TRX<br/>
+                                Cost of using <span className="text-danger">T</span>DNS = 10 TRX<br/>
 
                                 You can create multi name for your wallet address but note you can not delete name.
 
