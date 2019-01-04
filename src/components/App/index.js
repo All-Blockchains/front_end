@@ -72,12 +72,10 @@ class App extends React.Component {
             isValid: false,
 
             addressName: '',
-            helperTextForName: 'address name is required',
+            helperTextForName: 'Name Is Required >> Note :Name is case sensitive.',
             balance: 0,
             placeHolder: '',
             afterClick: false,
-
-            loading: false,
             fee: 0
 
 
@@ -213,27 +211,27 @@ class App extends React.Component {
                         this.setState({
                             errorName: true,
                             isAddressNameFree: false,
-                            helperTextForName: 'already taken ',
+                            helperTextForName: 'Already Taken ',
                             isValid: false
                         });
 
                     } else if (this.state.addressName === "") {
 
-                        this.setState({errorName: false, helperTextForName: 'Name is required '});
+                        this.setState({errorName: false, helperTextForName: 'Name Is Required '});
 
                     } else {
 
                         this.setState({
                             isAddressNameFree: true,
                             errorName: false,
-                            helperTextForName: 'Name is  free ',
+                            helperTextForName: 'Name is  Free ',
                             isValid: true
                         });
 
                     }
                 } else {
 
-                    this.setState({errorName: true, helperTextForName: 'Name is required ', isValid: false})
+                    this.setState({errorName: true, helperTextForName: 'Name Is Required', isValid: false})
                 }
 
                 break;
@@ -267,7 +265,7 @@ class App extends React.Component {
 
             if (this.state.loadingName) {
 
-                return <CircularProgress size={26}/>
+                return <CircularProgress size={28}/>
 
             }
             return (this.state.isAddressNameFree ? <CheckIcon color="primary"/> : <WarningIcon color="error"/>);
@@ -333,7 +331,6 @@ class App extends React.Component {
         }
 
 
-
         Utils.contract.add(addressName.trim()).send({
             callValue: callvalue,
         }).then(async res => {
@@ -369,14 +366,10 @@ class App extends React.Component {
 
                                 this.setState({afterClick: true});
 
-                                const f = this.state.fee;
-
-
                                 const b = this.state.balance - (data.fee + callvalue);
 
                                 console.log("balance : ", b / 1000000);
                                 this.setState({balance: b});
-
 
 
                             }
@@ -438,7 +431,7 @@ class App extends React.Component {
                                     label="Name "
                                     name="addressName"
                                     variant="outlined"
-                                    placeholder="JustinSun.tron"
+                                    placeholder="JustinSun.tron is differ from justinsun.tron"
                                     required
                                     id="addressName"
                                     fullWidth
@@ -448,7 +441,8 @@ class App extends React.Component {
                                     error={this.state.errorName}
                                     InputProps={{
                                         endAdornment: (
-                                            <InputAdornment variant="filled" position="end" name="customInput">
+                                            <InputAdornment variant="standard" position="end" name="customInput"
+                                                            aria-setsize={28}>
                                                 <Icon color={"inherit"}>
 
 
@@ -498,7 +492,7 @@ class App extends React.Component {
                         <Save className={classNames(classes.leftIcon, classes.iconSmall)}/>
                         Register
                     </Button>
-                    <h6 className="text-warning ml-2">Names are case sensitive.</h6>
+                    <h6 className="text-primary ml-2"><b>Name is case sensitive.</b></h6>
 
 
                 </small>
@@ -526,7 +520,8 @@ class App extends React.Component {
 
                             after assigning a name to wallet address you can work with that on wallet and explorer that
                             support it.<br/>
-                            <a href="https://tronwallet.network" target="_blank">tronwallet</a> supports TDNS. after
+                            <a href="https://tronwallet.network" target="_blank"
+                               rel="noopener noreferrer">tronwallet</a> supports TDNS. after
                             registration your name, then you can test it <br/>
 
 
@@ -567,7 +562,8 @@ class App extends React.Component {
                         </div>
 
 
-                        <small className="m-1 p-1"><a href="https://github.com/TDNS" target="_blank">github page</a>
+                        <small className="m-1 p-1"><a href="https://github.com/TDNS" target="_blank"
+                                                      rel="noopener noreferrer">github page</a>
                         </small>
 
                     </div>
