@@ -521,7 +521,7 @@ class App extends React.Component {
                                 JustinSun.tron , JustinSun, 贾斯汀太阳 <br/>
                                 and then click on TDNS button. <br/>
                                 <a href="https://tronwallet.network" target="_blank"
-                                   rel="noopener noreferrer">tronwallet</a> supports TDNS. <br/>
+                                   rel="noopener noreferrer">TronWallet</a> supports TDNS. <br/>
 
                             </div>
 
@@ -535,12 +535,12 @@ class App extends React.Component {
                                 You can create multi name for your wallet address but note you can not delete name.
 
                             </div>
-
+                            <hr/>
                         </div>
 
 
-                        <small className="m-1 p-1"><a href="https://github.com/TDNS" target="_blank"
-                                                      rel="noopener noreferrer">github page</a>
+                        <small className="ml-4 mb-2 p-1"><a href="https://github.com/TDNS" target="_blank"
+                                                            rel="noopener noreferrer"> <b> github page</b></a>
                         </small>
 
                     </div>
