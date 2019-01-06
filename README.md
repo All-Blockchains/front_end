@@ -33,5 +33,6 @@ name = "جاستین"
 
  at this time https://tronwallet.network supports TDNS
  
+![tdns](tdns.png)
 
   # TDNS
