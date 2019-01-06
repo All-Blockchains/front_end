@@ -506,6 +506,13 @@ class App extends React.Component {
                             </small>
                             <br/>
 
+                            <small className="text-primary "> then you can use <b
+                                className="text-danger">justinsun.tron</b> in send form on <a
+                                href="https://tronwallet.network"><b className="text-danger">TronWallet </b>
+                            </a> instead of wallet address .
+                            </small>
+                            <br/>
+
                             {/*<small className="text-warning">Note : </small> <small className="text-success">11 TRX is needed to be in*/}
                             {/*your wallet to register a name</small>*/}
 
