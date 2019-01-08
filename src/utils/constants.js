@@ -6,7 +6,6 @@ export const MAIN_CONTRACT_ADDRESS = 'TKvNjUuaLDpGkuNpiTAQpB4YpWfcvabPwm';
 //THPgisMAwFuqfW7tFCVQrm81X6ktVM1whi
 export const DONT_ADDRESS = 'T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb';
 
-
 export const MAIN_ABI = [{
     "constant": true,
     "inputs": [],

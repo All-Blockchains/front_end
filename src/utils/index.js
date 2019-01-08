@@ -14,7 +14,6 @@ const utils = {
         this.contract = this.tronWeb.contract(MAIN_ABI, MAIN_CONTRACT_ADDRESS);
     },
 
-
     async getData(hash) {
 
         try {
