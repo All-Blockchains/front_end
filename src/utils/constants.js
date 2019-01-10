@@ -2,6 +2,7 @@ export const MAIN_TRON_API = "https://api.trongrid.io";
 
 export const MAIN_FOUNDATION_ADDRESS = 'TBxZSq8sVYzHq4xVpfRodda3fEgpJMCJgG';
 
+
 export const MAIN_CONTRACT_ADDRESS = 'TKvNjUuaLDpGkuNpiTAQpB4YpWfcvabPwm';
 //THPgisMAwFuqfW7tFCVQrm81X6ktVM1whi
 export const DONT_ADDRESS = 'T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb';
@@ -91,3 +92,7 @@ export const MAIN_ABI = [{
     "stateMutability": "payable",
     "type": "fallback"
 }];
+
+
+export const ENABLE_BITCOIN_TDNS = "Enable Bitcoin Wallet Address";
+export const DISABLE_BITCOIN_TDNS = "Disable Bitcoin Wallet Address ";

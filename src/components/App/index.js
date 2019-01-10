@@ -15,11 +15,18 @@ import WarningIcon from '@material-ui/icons/Warning'
 import './App.scss';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
-
+import BitcoinTdns from "../bitcoin/TDNSBITCOIN";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TextFormatIcon from '@material-ui/icons/TextFormat'
-import {DONT_ADDRESS, MAIN_FOUNDATION_ADDRESS, MAIN_TRON_API} from "../../utils/constants";
+import {
+    DISABLE_BITCOIN_TDNS,
+    DONT_ADDRESS,
+    ENABLE_BITCOIN_TDNS,
+    MAIN_FOUNDATION_ADDRESS,
+    MAIN_TRON_API
+} from "../../utils/constants";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const styles = theme => ({
 
@@ -42,6 +49,13 @@ const styles = theme => ({
     iconSmall: {
         fontSize: 20,
     },
+    checkBoxRoot: {
+        color: green[600],
+        '&$checked': {
+            color: green[500],
+        },
+
+    }
 
 });
 
@@ -77,7 +91,11 @@ class App extends React.Component {
             balance: 0,
             placeHolder: '',
             afterClick: false,
-            fee: 0
+            fee: 0,
+            checkedG: false,
+
+
+
 
 
         };
@@ -246,6 +264,26 @@ class App extends React.Component {
         this.validation();
     };
 
+    myChange = event => {
+
+
+        this.setState({checkedG: event.target.checked});
+
+        if (!this.state.checkedG) {
+
+            //this.setState({errorTo: false, helperTo: 'Name is required.', sendTo: ''});
+
+
+        } else {
+
+            //this.setState({errorTo: false, helperTo: 'Address is required', sendTo: ''});
+
+
+        }
+
+
+    };
+
 
     async getAddress(name) {
 
@@ -301,7 +339,7 @@ class App extends React.Component {
         }
 
 
-        if ((await balance / 1000000) < 11) {
+        if ((await balance / 1000000) < 0) {
             Swal({
 
                 title: 'Insufficient Balance ',
@@ -478,9 +516,23 @@ class App extends React.Component {
 
     }
 
+    renderTDNSForm = () => {
+
+        if (!this.state.checkedG === false) {
+
+            return <BitcoinTdns/>;
+
+        } else {
+            return this.renderWalletInfo();
+
+        }
+
+
+    };
 
     render() {
 
+        const {classes} = this.props;
 
         return (<div>
 
@@ -520,7 +572,31 @@ class App extends React.Component {
                         </p>
                     </div>
 
-                    {this.renderWalletInfo()}
+                    <label>
+
+                        <Checkbox
+
+                            onChange={this.myChange}
+                            value="checkedG"
+                            checked={this.state.checkedG}
+                            classes={{
+
+                                root: classes.checkBoxRoot,
+                                checked: classes.checked,
+
+                            }}
+
+                        /> {!this.state.checkedG ? ENABLE_BITCOIN_TDNS : DISABLE_BITCOIN_TDNS}
+
+                    </label>
+
+
+                    {
+                        this.renderTDNSForm()
+                    }
+
+
+
 
 
                     <div className='header white p-2'>
