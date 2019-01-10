@@ -87,82 +87,6 @@ class BitcoinTdns extends React.Component {
 
     async componentDidMount() {
 
-        // await new Promise(resolve => {
-        //     const tronWebState = {
-        //         installed: !!window.tronWeb,
-        //         loggedIn: window.tronWeb && window.tronWeb.ready
-        //     };
-        //
-        //     if (tronWebState.installed) {
-        //         this.setState({
-        //             tronWeb:
-        //             tronWebState
-        //         });
-        //
-        //         return resolve();
-        //     }
-        //
-        //     let tries = 0;
-        //
-        //     const timer = setInterval(() => {
-        //         if (tries >= 10) {
-        //
-        //             //const TRONGRID_API = 'https://api.shasta.trongrid.io';
-        //
-        //             window.TronWeb = new TronWeb(
-        //                 TRON_API,
-        //                 TRON_API,
-        //                 TRON_API
-        //             );
-        //
-        //             this.setState({
-        //                 tronWeb: {
-        //                     installed: false,
-        //                     loggedIn: false
-        //                 }
-        //             });
-        //
-        //             clearInterval(timer);
-        //             return resolve();
-        //         }
-        //
-        //         tronWebState.installed = !!window.tronWeb;
-        //         tronWebState.loggedIn = window.tronWeb && window.tronWeb.ready;
-        //
-        //         if (!tronWebState.installed)
-        //             return tries++;
-        //
-        //         this.setState({
-        //             tronWeb: tronWebState
-        //         });
-        //
-        //         resolve();
-        //     }, 100);
-        // });
-        //
-        // if (!this.state.tronWeb.loggedIn) {
-        //     // Set default address (foundation address) used for contract calls
-        //     // Directly overwrites the address object as TronLink disabled the
-        //     // function call
-        //     window.tronWeb.defaultAddress = {
-        //         hex: window.tronWeb.address.toHex(FOUNDATION_ADDRESS),
-        //         base58: FOUNDATION_ADDRESS
-        //     };
-        //
-        //     window.tronWeb.on('addressChanged', () => {
-        //         if (this.state.tronWeb.loggedIn)
-        //             return;
-        //
-        //         this.setState({
-        //             tronWeb: {
-        //                 installed: true,
-        //                 loggedIn: true
-        //             }
-        //         });
-        //     });
-        // }
-        //
-        // Utils.setTronWeb(window.tronWeb);
 
     }
 
@@ -420,7 +344,7 @@ class BitcoinTdns extends React.Component {
                                     label="Name "
                                     name="addressName"
                                     variant="outlined"
-                                    placeholder="Example: JustingSun.tron"
+                                    placeholder="Example: JustingSun.btc"
                                     required
                                     id="addressName"
                                     fullWidth

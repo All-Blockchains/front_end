@@ -475,13 +475,13 @@ class App extends React.Component {
                             </div>
                             <div className="col-md-6 col-sm-6  ">
 
-                                <small className='text-success '>
-                                    <p className="m-2">
-                                        Address : {this.state.placeHolder}
-                                        <br/>
-                                        Balance : {this.state.balance / 1000000} TRX
-                                    </p>
-                                </small>
+                                {/*<small className='text-success '>*/}
+                                {/*<p className="m-2">*/}
+                                {/*Address : {this.state.placeHolder}*/}
+                                {/*<br/>*/}
+                                {/*Balance : {this.state.balance / 1000000} TRX*/}
+                                {/*</p>*/}
+                                {/*</small>*/}
 
 
                             </div>
@@ -608,7 +608,8 @@ class App extends React.Component {
 
                                 <br/>
 
-                                Install TronLink and then import or create a wallet with at least 11 TRX <br/>
+                                Install TronLink and then import or create a wallet <br/>with at least .026 TRX to
+                                register Tron wallet address<br/> and 0.8 ~ 0.9 Trx for bitcoin and other Altcoins <br/>
                                 Enter a name in any language in <a href="#addressName"> Name </a> field.<br/>
                                 For example :
                                 JustinSun.tron , JustinSun, 贾斯汀太阳 <br/>
