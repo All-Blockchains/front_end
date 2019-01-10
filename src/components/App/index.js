@@ -53,7 +53,7 @@ const theme = createMuiTheme({
     typography: {useNextVariants: true},
 });
 
-const callvalue = 10000000;
+const callvalue = 0;
 
 class App extends React.Component {
 
@@ -287,7 +287,7 @@ class App extends React.Component {
 
             type: 'question',
             title: 'Are you sure for Name : ' + addressName + ' ? ',
-            text: 'Cost of registration is 10 TRX plus 0.27 ~ 0.3 TRX for network fee ',
+            text: 'Cost of registration is 0 TRX plus 0.27 ~ 0.3 TRX for network fee ',
             confirmButtonText: 'Yes',
             cancelButtonText: 'No',
             showCancelButton: true,
