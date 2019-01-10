@@ -547,7 +547,7 @@ class App extends React.Component {
 
                                 Network fee = .27 ~ .3 TRX <br/>
 
-                                Cost of using <span className="text-danger">T</span>DNS = 10 TRX<br/>
+                                Cost of using <span className="text-danger">T</span>DNS = 0 TRX<br/>
 
                                 You can create multi name for your wallet address but note you can not delete name.
 
